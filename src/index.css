@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: whitesmoke;
+  overflow-x: hidden;
+}
+
+
+.switch3
+{
+  position: relative;
+  top: 50px;
+  height:50px;
+  display:flex;
+  justify-content:space-between;
+  background-color: #fffbce;
+  border-radius:15px;
+  margin: 0 10px;
+  box-shadow: 4px 1px 5px 0px rgba(150,148,148,0.75);
+-webkit-box-shadow: 4px 1px 5px 0px rgba(150,148,148,0.75);
+-moz-box-shadow: 4px 1px 5px 0px rgba(150,148,148,0.75);
+}
+.switch3 label{
+ width: 100px;
+ z-index:1;
+ text-align: center;
+ margin: auto;
+ font-weight:600;
+ color: rgb(92, 90, 90);
+ cursor: pointer;
+}
+.switch3::before{
+  content: '';
+  position: absolute;
+  top: 7px;
+  left:0;
+  width: 95px;
+  height: 70%;
+  background: #fae605;
+  border-radius: 17px;
+  transition: .5s left ease;
+}
+.switch3 input[type='radio'] {
+  display: none;
+}
+.switch3:has(#switch3-radio1:checked)::before{
+  left: 3%;
+}
+.switch3:has(#switch3-radio2:checked)::before{
+  left: 36%;
+}
+.switch3:has(#switch3-radio3:checked)::before{
+  left: 69%;
+}
+
