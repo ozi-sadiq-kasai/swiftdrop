@@ -1,4 +1,5 @@
 import Navbar from './component/Navbar'
+import Orders from './page/Orders'
 import Home from './page/home'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/orders" element={<Orders/>} />
       </Routes>
     </Router>
   )

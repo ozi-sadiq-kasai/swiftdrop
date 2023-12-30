@@ -1,24 +1,25 @@
 import { GiShoppingCart } from 'react-icons/gi'
-import { RiMenuFill } from 'react-icons/ri'
-import { useNavigate } from 'react-router-dom'
+import { CgProfile } from 'react-icons/cg'
+import { ImEnter } from 'react-icons/im'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
- const navigate = useNavigate()
-
 
   return (
-    <div className="w-full flex justify-center py-1 bg-yellow-100">
+    <div className="w-full flex justify-center py-1 bg-white z-50 opacity-50 fixed top-0">
       <div className="flex justify-between items-center w-11/12">
-        <h1
-          className="font-semibold text-yellow-900 text-xl cursor-pointer py-1"
-          onClick={navigate('/')}
-        >
-          swift<span className="text-green-700">Drop</span>
-        </h1>
+        <Link to={'/'}>
+          <h1 className="font-semibold text-yellow-900 text-xl cursor-pointer py-1">
+            swift<span className="text-green-700">Drop</span>
+          </h1>
+        </Link>
+        <div className="flex items-center gap-3 cursor-pointer">
+          <CgProfile className="text-[26px] text-green-700 " />
+          <Link to={'/orders'}>
+            <ImEnter className="text-[26px] text-green-700 " />
+          </Link>
 
-        <div className="flex items-center gap-3">
-          <GiShoppingCart className="text-green-700  text-[32px]" />
-          <RiMenuFill className="font text-[26px] text-gray-500" />
+          <GiShoppingCart className="text-green-700 text-[32px]" />
         </div>
       </div>
     </div>
