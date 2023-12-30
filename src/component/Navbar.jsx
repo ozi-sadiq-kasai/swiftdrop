@@ -1,6 +1,5 @@
 import { GiShoppingCart } from 'react-icons/gi'
 import { RiMenuFill } from 'react-icons/ri'
-import Logo from '../assets/images/Logo.jpg'
 import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
@@ -8,18 +7,22 @@ const Navbar = () => {
 
 
   return (
-    <div className="flex justify-between items-center top-0 bg-white">
-      <img
-        src={Logo}
-        alt="logo"
-        onClick={() => navigate('/')}
-        className="pl-7 w-24 rounded-full cursor-pointer"
-      />
-      <div className="flex pr-7 gap-3">
-        <GiShoppingCart className="text-green-500 font text-4xl rounded-full p-1 bg-yellow-100" />
-        <RiMenuFill className="font text-4xl text-gray-500 rounded-full p-1 bg-yellow-100" />
+    <div className="w-full flex justify-center py-1 bg-yellow-100">
+      <div className="flex justify-between items-center w-11/12">
+        <h1
+          className="font-semibold text-yellow-900 text-xl cursor-pointer py-1"
+          onClick={navigate('/')}
+        >
+          swift<span className="text-green-700">Drop</span>
+        </h1>
+
+        <div className="flex items-center gap-3">
+          <GiShoppingCart className="text-green-700  text-[32px]" />
+          <RiMenuFill className="font text-[26px] text-gray-500" />
+        </div>
       </div>
     </div>
   )
 }
 export default Navbar
+

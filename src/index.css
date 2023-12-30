@@ -5,15 +5,17 @@
 body {
   background-color: whitesmoke;
   overflow-x: hidden;
+  font-family:Helvetica, sans-serif;
 }
 
 
 .switch3
 {
   position: relative;
-  top: 50px;
+  top: 60px;
   height:50px;
   display:flex;
+  /* width: 100%; */
   justify-content:space-between;
   background-color: #fffbce;
   border-radius:15px;
@@ -36,7 +38,7 @@ body {
   position: absolute;
   top: 7px;
   left:0;
-  width: 95px;
+  width: 25%;
   height: 70%;
   background: #fae605;
   border-radius: 17px;
@@ -53,5 +55,64 @@ body {
 }
 .switch3:has(#switch3-radio3:checked)::before{
   left: 69%;
+}
+
+
+/* ANIMATTION */
+.animation{
+  height:100%;
+  width:100%;
+  overflow: hidden;
+  margin: 0;
+  position: absolute;
+  top:100px;
+}
+
+.road{
+ position: relative;
+  height:20%;
+  background: dimgrey;
+  box-sizing: border-box;
+  border-top: 10px solid grey;
+  border-bottom: 10px solid grey;
+  width: 100%;
+  top: 0;
+}
+
+.lines{
+  box-sizing: border-box;
+  border: 2px dashed #e5e2e2;
+  height: 0px;
+  width: 100%;
+  position: absolute;
+  top: 45%;
+}
+
+.mario{
+ position: absolute;
+ width: 60px;
+ top: -12px;
+ left: 0px;
+ animation-name:drive;
+ animation-duration:4.9s;
+ animation-fill-mode: forwards;
+ animation-iteration-count: infinite;
+ animation-timing-function: linear
+}
+.luigi{
+ position: absolute;
+ width: 60px;
+ top: 45px;
+ left: 0;
+ animation-name: drive;
+ animation-duration:5.2s;
+ animation-fill-mode: forwards;
+ animation-iteration-count: infinite;
+ animation-timing-function: linear;
+}
+
+@keyframes drive{
+  from{transform:translateX(-1300px)}
+  to{transform: translateX(1300px);}
 }
 
