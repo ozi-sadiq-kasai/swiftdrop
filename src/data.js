@@ -4,7 +4,9 @@ import pharmacy from './assets/images/pharmacy.png'
 import drinks from './assets/images/drinks.png'
 import fitfam from './assets/images/fitfam.png'
 import meal from './assets/images/meal.png'
+import iyabasira from './assets/images/iyabasira.png'
 import chickenRepublic from './assets/images/chickenRepublic.jpg'
+import cbae from './assets/images/cbae.jpg'
 import chicken from './assets/images/chicken.jpg'
 import chips from './assets/images/chips.jpg'
 import shawarma from './assets/images/shawarma.jpg'
@@ -60,4 +62,23 @@ export const republic =[
   name:'Shawarma',
   price:'6000'
  }, 
+]
+
+
+export const eatry =[
+ {
+  name:'CBAE',
+  image:cbae,
+  specialty:'culinary dishes'
+ },
+ {
+  name:'CHICKEN REPUBLIC',
+  image:chickenRepublic,
+  specialty:'snacks, continental dishes'
+ },
+ {
+  name:'Iya Basira',
+  image:iyabasira,
+  specialty:'African Dishes'
+ },
 ]

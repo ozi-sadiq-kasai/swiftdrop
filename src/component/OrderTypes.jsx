@@ -1,5 +1,5 @@
 import { icons } from "../data"
-import Image from "./Image"
+import OrderPlaces from "./OrderPlaces"
 
 const renderIcons = icons.map((icon, index) => (
   <div key={icon.name}>
@@ -10,15 +10,15 @@ const renderIcons = icons.map((icon, index) => (
   </div>
 ))
 
-const OrderOptions = () => {
+const OrderTypess = () => {
   return (
     <div className="w-screen my-2">
       <p>Explore our Categories</p>
       <div className="flex justify-around items-center flex-wrap xsm:justify-evenly xsm:gap-2">
         {renderIcons}
       </div>
-      <Image/>
+      <OrderPlaces/>
     </div>
   )
 }
-export default OrderOptions
+export default OrderTypess

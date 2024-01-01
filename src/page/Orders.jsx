@@ -1,7 +1,7 @@
 import { MdPlace } from 'react-icons/md'
 import { RiArrowDropDownLine } from 'react-icons/ri'
 import { useState } from 'react'
-import OrderOptions from '../component/OrderOptions'
+import OrderTypes from '../component/OrderTypes'
 
 const Orders = () => {
  const [search,setSearch] = useState('')
@@ -37,7 +37,7 @@ const Orders = () => {
         </form>
       </div>
       <div className="flex justify-center">
-        <OrderOptions />
+        <OrderTypes />
       </div>
     </div>
   )
