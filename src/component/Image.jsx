@@ -13,7 +13,7 @@ const Image = () => {
           '65906c397acc778e375c',
           '01'
         )
-        setImageUrl(result.href) // Update the state with the image URL
+        setImageUrl(result) // Update the state with the image URL
       } catch (error) {
         console.error(error);
       }

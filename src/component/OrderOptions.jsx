@@ -16,8 +16,8 @@ const OrderOptions = () => {
       <p>Explore our Categories</p>
       <div className="flex justify-around items-center flex-wrap xsm:justify-evenly xsm:gap-2">
         {renderIcons}
-        <Image/>
       </div>
+      <Image/>
     </div>
   )
 }
