@@ -1,6 +1,7 @@
 import { MdPlace } from 'react-icons/md'
 import { RiArrowDropDownLine } from 'react-icons/ri'
 import { useState } from 'react'
+import OrderOptions from '../component/OrderOptions'
 
 const Orders = () => {
  const [search,setSearch] = useState('')
@@ -16,23 +17,27 @@ const Orders = () => {
  }
 
   return (
-    <div className="relative top-10 p-5 border-2">
-      <div className="flex justify-between">
+    <div className="relative top-10 p-4">
+      <div className="flex justify-between ">
         <div className="flex items-center">
           <MdPlace />
           <p className="text-sm">Enter address</p>
           <RiArrowDropDownLine />
         </div>
-        <form 
-        className="border basis-1/4 bg-white py-3"
-        onSubmit={handleSubmit}
+        <form
+          className="basis-1/3 bg-white p-1 rounded-xl"
+          onSubmit={handleSubmit}
         >
-          <input 
-          type="text" 
-          value={search}
-          onChange={handleSearch}
-          placeholder="Search SwiftDrop" />
+          <input
+            type="text"
+            value={search}
+            onChange={handleSearch}
+            placeholder="Search SwiftDrop"
+          />
         </form>
+      </div>
+      <div className="flex justify-center">
+        <OrderOptions />
       </div>
     </div>
   )

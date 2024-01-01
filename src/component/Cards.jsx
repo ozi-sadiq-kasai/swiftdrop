@@ -15,10 +15,10 @@ const Cards = () => {
   return (
     <div className="relative top-52 md:top-64 md:m-10 lg:top-[22rem]">
       <div className="flex justify-center items-center gap-3">
-        <h1 className="text-2xl font text-gray-300">
+        <h1 className="text-2xl font text-gray-400">
           Join our growing network
         </h1>
-        <FaArrowDown className="text-2xl font text-gray-300" />
+        <FaArrowDown className="text-2xl font text-gray-400 animate-bounce w-6 h-6" />
       </div>
       <div className="lg:flex xl:flex 2xl:flex">
         {/*  */}
