@@ -3,6 +3,8 @@ import FooterCarousel from '../component/FooterCarousel'
 import Slider from '../component/Slider'
 import Cards from '../component/Cards'
 import Animation from '../component/Animation'
+import Modal from '../component/Modal'
+
 const main = () => {
   return (
     <main className="mt-14">
@@ -24,6 +26,7 @@ const main = () => {
       <Slider />
       <Cards />
       <FooterCarousel />
+      <Modal/>
     </main>
   )
 }
