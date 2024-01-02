@@ -2,15 +2,19 @@ import Navbar from './component/Navbar'
 import Orders from './page/Orders'
 import Home from './page/Home'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
+import OrderItems from './page/OrderItems'
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/orders" element={<Orders/>} />
-      </Routes>
+      {/* <AuthProvider> */}
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/OrderPlaces/:id" element={<OrderItems />} />
+          <Route path="/orders" element={<Orders />} />
+        </Routes>
+      {/* </AuthProvider> */}
     </Router>
   )
 }
