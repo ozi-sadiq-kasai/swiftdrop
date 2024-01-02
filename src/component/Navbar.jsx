@@ -2,8 +2,11 @@ import { GiShoppingCart } from 'react-icons/gi'
 import { CgProfile } from 'react-icons/cg'
 import { ImEnter } from 'react-icons/im'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../Context'
+import { useContext } from 'react'
 
 const Navbar = () => {
+ const {setModal}=useContext(AuthContext)
 
   return (
     <div className="w-full flex justify-center py-1 bg-white z-50 opacity-50 fixed top-0">
@@ -14,7 +17,9 @@ const Navbar = () => {
           </h1>
         </Link>
         <div className="flex items-center gap-3 cursor-pointer">
-          <CgProfile className="text-[26px] text-green-700 " />
+          <CgProfile
+           className="text-[26px] text-green-700"
+           onClick={()=>{setModal(true)}} />
           <Link to={'/orders'}>
             <ImEnter className="text-[26px] text-green-700 " />
           </Link>

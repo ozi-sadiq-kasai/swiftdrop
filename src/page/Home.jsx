@@ -4,8 +4,12 @@ import Slider from '../component/Slider'
 import Cards from '../component/Cards'
 import Animation from '../component/Animation'
 import Modal from '../component/Modal'
+import { useContext } from 'react'
+import { AuthContext } from '../../src/Context'
+
 
 const main = () => {
+ const { handleCloseModal,modal } = useContext(AuthContext)
   return (
     <main className="mt-14">
       <div className="flex justify-center text-xl font-bold py-4 px-2">
@@ -26,7 +30,7 @@ const main = () => {
       <Slider />
       <Cards />
       <FooterCarousel />
-      <Modal/>
+      {modal && <Modal/>}
     </main>
   )
 }

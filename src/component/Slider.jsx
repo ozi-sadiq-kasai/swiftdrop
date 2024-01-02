@@ -8,7 +8,7 @@ const Slider = () => {
   }
 
   return (
-    <div className="switch3-container relative top-28 md:top-44 lg:top-64 w-full">
+    <div className="switch3-container relative top-28 md:top-44 lg:top-64 w-full z-0">
       <div className="switch3">
         <input
           type="radio"
