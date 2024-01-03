@@ -1,14 +1,17 @@
-import { useContext } from "react"
+import { useContext,useEffect} from "react"
 import {AuthContext} from '../../src/Context'
+import { Link,useNavigate } from "react-router-dom"
+
 
 const Modal = () => {
-  const {
-    handleCloseModal,
-    credentials,
-    handleInputChange,
-    handleSubmit,
-    handleSignupLogin,
-  } = useContext(AuthContext)
+ const { handleCloseModal, credentials, handleInputChange, handleSignupLogin,user } =
+   useContext(AuthContext)
+     const navigate = useNavigate()
+     useEffect(() => {
+       if (user) {
+         navigate('/payment')
+       }
+     }, [user, navigate])
 
   return (
     <div className="modalBackground">
@@ -18,61 +21,48 @@ const Modal = () => {
           <p onClick={handleCloseModal}>X</p>
         </div>
 
-        <form
-          className="modalForm"
-          onSubmit={(e) => handleSignupLogin(e, credentials)}
-        >
-          <div className="signup">
-            <h1 className="signup--header">Friends Signup</h1>
-            {/* 
-            < onSubmit={(e) => handleSignupLogin(e, credentials)}> */}
+        <form onSubmit={(e) => handleSignupLogin(e, credentials)}>
+          <div className="form-field-wrapper">
+            <label>Name:</label>
             <input
+              value={credentials.name}
+              onChange={handleInputChange}
               type="text"
               name="name"
-              onChange={handleInputChange}
-              value={credentials.name}
-              placeholder="Enter name"
-              className="signup--name"
+              placeholder="Enter name..."
             />
+          </div>
 
+          <div className="form-field-wrapper">
+            <label>Email:</label>
             <input
+              value={credentials.email}
+              onChange={handleInputChange}
               type="email"
               name="email"
-              onChange={handleInputChange}
-              value={credentials.email}
-              placeholder="Enter Email"
-              className="signup--email"
+              placeholder="Enter Email..."
             />
-
-            <input
-              type="password"
-              name="password1"
-              onChange={handleInputChange}
-              value={credentials.password1}
-              placeholder="Enter Password"
-              className="signup--password1"
-            />
-            <input
-              type="password"
-              name="password2"
-              onChange={handleInputChange}
-              value={credentials.password2}
-              placeholder="Confirm Password"
-              className="signup--password2"
-            />
-
-            <button type="submit" className="signup--btn">
-              Submit
-            </button>
-
-            {/* <p className="signup--signup">
-              Already have an account <Link to="/login">Login</Link>
-            </p> */}
           </div>
-          {/* <button type="submit" className="modalContainer--btn">
+
+          <div className="form-field-wrapper">
+            <label>Password:</label>
+            <input
+              value={credentials.password}
+              onChange={handleInputChange}
+              type="password"
+              name="password"
+              placeholder="Enter Password..."
+            />
+          </div>
+
+          <button type="submit" className="signup--btn">
             Submit
-          </button> */}
+          </button>
         </form>
+
+        <p>
+          Already have an account? <Link to="/login">Login</Link>
+        </p>
       </div>
     </div>
   )

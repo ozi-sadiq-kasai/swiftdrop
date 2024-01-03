@@ -1,80 +1,85 @@
-import { createContext,useState } from "react"
+import { createContext,useState,useEffect } from "react"
+import {account} from "./utils/appwriteConfig"
+import { useNavigate } from "react-router-dom"
 import { ID } from "appwrite"
-import {account} from './appwriteConfig'
 
 const AuthContext = createContext()
 
+
 const AuthProvider = ({children}) => {
+  const navigate = useNavigate()
   const [modal, setModal] = useState(false)
+  const [user, setUser] = useState(null)
   const [credentials, setCredentials] = useState({
     name: '',
     email: '',
-    password1: '',
-    password2: '',
+    password: '',
   })
-
+  // handle close modal
   const handleCloseModal = () => {
     setModal(false)
   }
 
-  // handle input value
-  // const handleInputChange = (e) => {
-  //   e.preventDefault()
-  //   let name = e.target.name
-  //   let value = e.target.value
-  //   setCredentials((prevCredentials) => ({ ...prevCredentials, [name]: value }))
-  // }//handle inputChange
+  //handle inputChange
   const handleInputChange = (e) => {
     e.preventDefault()
     let name = e.target.name
     let value = e.target.value
     setCredentials({ ...credentials, [name]: value })
-    // console.log(credentials)
+    console.log(credentials)
   }
 
-  // handle input submit
-  // handle userSignup
-  const handleSignupLogin = async (e, credentials) => {
+  //handle Userlogin
+  const handleUserLogin = async (e) => {
     e.preventDefault()
-    // if (credentials.password1 !== credentials.password2) {
-    //   alert('Passwords do not match')
-    // }
     try {
-      let response = await account.create(
-        ID.unique(),
+      let response = await account.createEmailSession(
         credentials.email,
-        credentials.password1,
-        credentials.name
+        credentials.password
       )
-
-      console.log(response)
-
-      await account.createEmailSession(credentials.email, credentials.password1)
-
-      const accountDetails = await account.get()
-      // console.log('accounDetails:',accountDetails)
-      // console.log('accounDetails:',accountDetails.name)
+      console.log('logged', response)
+      const accountDetails = account.get()
       setUser(accountDetails)
-      navigate('/')
-
-      setCredentials({
-        name: '',
-        email: '',
-        password1: '',
-        password2: '',
-      })
+      navigate('/payment')
     } catch (error) {
       console.error(error)
     }
   }
 
+  // handle userSignup
+  const handleSignupLogin = async (e, credentials) => {
+    e.preventDefault()
+    try {
+      let response = await account.create(
+        ID.unique(),
+        credentials.email,
+        credentials.password,
+        credentials.name
+      )
+
+      await account.createEmailSession(credentials.email, credentials.password)
+
+      const accountDetails = await account.get()
+      setUser(accountDetails)
+      setCredentials({
+        name: '',
+        email: '',
+        password: '',
+      })
+    } catch (error) {
+      console.error(error)
+    }
+  }
+  
   const contextData = {
     handleCloseModal,
-    handleInputChange,
     handleSignupLogin,
-    credentials,
     setModal,
+    user,
     modal,
+    handleUserLogin,
+    handleInputChange,
+    credentials,
   }
   return (
     <AuthContext.Provider value={contextData}>{children}</AuthContext.Provider>
