@@ -141,7 +141,7 @@ body {
   justify-content: center;
   padding:30px 10px;
 }
-form > input{
+.modalForm > input{
  border:none;
  text-align: center;
  outline:none;
@@ -151,7 +151,7 @@ form > input{
  width: 80%;
  padding: 4px 0;
 }
-form{
+.modalForm {
  display: flex;
  flex-direction: column;
  flex-wrap: wrap;

@@ -4,6 +4,9 @@ import Home from './page/home'
 import AuthProvider from './Context'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import OrderItems from './page/OrderItems'
+import Modal from './component/Modal'
+import Payment from './page/Payment'
+import PrivateRoutes from './component/PrivateRoutes'
 
 function App() {
   return (
@@ -14,6 +17,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/OrderPlaces/:id" element={<OrderItems />} />
           <Route path="/orders" element={<Orders />} />
+          <Route path="/signup" element={<Modal />} />
+          <Route element={<PrivateRoutes/>}>
+            <Route path="/payment" element={<Payment />} />
+          </Route>
         </Routes>
       </AuthProvider>
     </Router>

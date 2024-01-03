@@ -1,5 +1,8 @@
 import { icons } from "../data"
 import OrderPlaces from "./OrderPlaces"
+import Modal from "./Modal"
+import { useContext } from "react"
+import { AuthContext } from "../Context"
 
 const renderIcons = icons.map((icon, index) => (
   <div key={icon.name}>
@@ -11,13 +14,15 @@ const renderIcons = icons.map((icon, index) => (
 ))
 
 const OrderTypess = () => {
+ const { modal } = useContext(AuthContext)
   return (
     <div className="w-screen my-2">
       <p>Explore our Categories</p>
       <div className="flex justify-around items-center flex-wrap xsm:justify-evenly xsm:gap-2">
         {renderIcons}
       </div>
-      <OrderPlaces/>
+      <OrderPlaces />
+      {modal && <Modal />}
     </div>
   )
 }

@@ -9,7 +9,7 @@ import { AuthContext } from '../../src/Context'
 
 
 const main = () => {
- const { handleCloseModal,modal } = useContext(AuthContext)
+ const {modal} = useContext(AuthContext)
   return (
     <main className="mt-14">
       <div className="flex justify-center text-xl font-bold py-4 px-2">

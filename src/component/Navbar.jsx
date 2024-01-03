@@ -1,11 +1,12 @@
 import { GiShoppingCart } from 'react-icons/gi'
 import { CgProfile } from 'react-icons/cg'
 import { ImEnter } from 'react-icons/im'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../Context'
 import { useContext } from 'react'
 
 const Navbar = () => {
+ const navigate = useNavigate()
  const {setModal}=useContext(AuthContext)
 
   return (
@@ -24,7 +25,10 @@ const Navbar = () => {
             <ImEnter className="text-[26px] text-green-700 " />
           </Link>
 
-          <GiShoppingCart className="text-green-700 text-[32px]" />
+          <GiShoppingCart
+           className="text-green-700 text-[32px]"
+           onClick={()=>navigate('/payment')}
+           />
         </div>
       </div>
     </div>
