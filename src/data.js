@@ -128,16 +128,17 @@ export const restaurantblock =[
   image:cbae,
   specialty:'culinary dishes'
  },
+  {
+  id:'ib3',
+  name:'IYA BASIRA',
+  image:iyabasira,
+  specialty:'African Dishes'
+ },
  {
   id:'cr2',
   name:'CHICKEN REPUBLIC',
   image:chickenRepublic,
   specialty:'snacks, continental dishes'
  },
- {
-  id:'ib3',
-  name:'Iya Basira',
-  image:iyabasira,
-  specialty:'African Dishes'
- },
+
 ]
