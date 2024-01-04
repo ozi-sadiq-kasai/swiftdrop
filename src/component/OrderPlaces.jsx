@@ -1,6 +1,6 @@
 // OrderPlaces.jsx
 import React, { useEffect, useState } from 'react'
-import { eatry } from '../data'
+import { restaurantblock } from '../data'
 import { useNavigate } from 'react-router-dom'
 
 const OrderPlaces = () => {
@@ -9,7 +9,7 @@ const OrderPlaces = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const restaurantData = eatry.map((item) => (
+    const restaurantData = restaurantblock.map((item) => (
       <div
         key={item.id}
         className="hover:shadow-md w-44 px-4 h-58 xsm:h-48 cursor-pointer"

@@ -1,24 +1,24 @@
-import { useContext,useEffect} from "react"
-import {AuthContext} from '../../src/Context'
-import { Link,useNavigate } from "react-router-dom"
-
+import { useContext, useEffect } from 'react'
+import { AuthContext } from '../utils/Context'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Modal = () => {
- const { handleCloseModal, credentials, handleInputChange, handleSignupLogin,user } =
-   useContext(AuthContext)
-     const navigate = useNavigate()
-     useEffect(() => {
-       if (user) {
-         navigate('/payment')
-       }
-     }, [user, navigate])
+  const { setModal, credentials, handleInputChange, handleSignupLogin, user } =
+    useContext(AuthContext)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (user) {
+      navigate('/payment')
+    }
+  }, [user, navigate])
 
   return (
     <div className="modalBackground">
       <div className="modalContainer">
         <div className="modalContainer--header">
           <h1>Sign Up</h1>
-          <p onClick={handleCloseModal}>X</p>
+          <p onClick={() => setModal(false)}>X</p>
         </div>
 
         <form onSubmit={(e) => handleSignupLogin(e, credentials)}>
@@ -68,4 +68,4 @@ const Modal = () => {
   )
 }
 
-export default Modal 
+export default Modal

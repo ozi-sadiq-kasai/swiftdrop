@@ -1,8 +1,8 @@
-import { icons } from "../data"
-import OrderPlaces from "./OrderPlaces"
-import Modal from "./Modal"
-import { useContext } from "react"
-import { AuthContext } from "../Context"
+import { icons } from '../data'
+import OrderPlaces from './OrderPlaces'
+import Modal from './Modal'
+import { useContext } from 'react'
+import { AuthContext } from '../utils/Context'
 
 const renderIcons = icons.map((icon, index) => (
   <div key={icon.name}>
@@ -13,8 +13,8 @@ const renderIcons = icons.map((icon, index) => (
   </div>
 ))
 
-const OrderTypess = () => {
- const { modal } = useContext(AuthContext)
+const OrderTypes = () => {
+  const { modal } = useContext(AuthContext)
   return (
     <div className="w-screen my-2">
       <p>Explore our Categories</p>
@@ -26,4 +26,4 @@ const OrderTypess = () => {
     </div>
   )
 }
-export default OrderTypess
+export default OrderTypes

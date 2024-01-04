@@ -5,7 +5,7 @@ import Cards from '../component/Cards'
 import Animation from '../component/Animation'
 import Modal from '../component/Modal'
 import { useContext } from 'react'
-import { AuthContext } from '../../src/Context'
+import { AuthContext } from '../utils/Context'
 
 
 const main = () => {

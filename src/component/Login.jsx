@@ -1,10 +1,16 @@
-import {useContext} from 'react'
-import { AuthContext } from '../Context'
-import { Link} from 'react-router-dom'
+import {useContext,useEffect} from 'react'
+import { AuthContext } from '../utils/Context'
+import { Link,useNavigate} from 'react-router-dom'
 
 const Login = () => {
- const { handleInputChange, credentials, handleUserLogin, } =
+ const { handleInputChange, credentials, handleUserLogin, user} =
    useContext(AuthContext)
+   const navigate = useNavigate()
+   useEffect(() => {
+     if (user) {
+       navigate('/payment')
+     }
+   }, [user, navigate])
 
 
   return (
@@ -25,7 +31,7 @@ const Login = () => {
             <label>Password:</label>
             <input
               type="password"
-              value={credentials.password1}
+              value={credentials.password}
               onChange={handleInputChange}
               name="password"
               placeholder="Enter password"

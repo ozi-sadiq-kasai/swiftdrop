@@ -2,7 +2,7 @@ import { GiShoppingCart } from 'react-icons/gi'
 import { CgProfile } from 'react-icons/cg'
 import { ImEnter } from 'react-icons/im'
 import { Link, useNavigate } from 'react-router-dom'
-import { AuthContext } from '../Context'
+import { AuthContext } from '../utils/Context'
 import { useContext } from 'react'
 
 const Navbar = () => {

@@ -1,12 +1,11 @@
-import { createContext,useState,useEffect } from "react"
-import {account} from "./utils/appwriteConfig"
-import { useNavigate } from "react-router-dom"
-import { ID } from "appwrite"
+import { createContext, useState } from 'react'
+import { account } from './appwriteConfig'
+import { useNavigate } from 'react-router-dom'
+import { ID } from 'appwrite'
 
 const AuthContext = createContext()
 
-
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
   const navigate = useNavigate()
   const [modal, setModal] = useState(false)
   const [user, setUser] = useState(null)
@@ -18,6 +17,7 @@ const AuthProvider = ({children}) => {
   // handle close modal
   const handleCloseModal = () => {
     setModal(false)
+    console.log(modal)
   }
 
   //handle inputChange
@@ -70,7 +70,7 @@ const AuthProvider = ({children}) => {
       console.error(error)
     }
   }
-  
+
   const contextData = {
     handleCloseModal,
     handleSignupLogin,
@@ -87,4 +87,4 @@ const AuthProvider = ({children}) => {
 }
 export default AuthProvider
 
-export {AuthContext}
+export { AuthContext }
