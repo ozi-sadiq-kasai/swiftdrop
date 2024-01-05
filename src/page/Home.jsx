@@ -3,7 +3,13 @@ import FooterCarousel from '../component/FooterCarousel'
 import Slider from '../component/Slider'
 import Cards from '../component/Cards'
 import Animation from '../component/Animation'
+import Modal from '../component/Modal'
+import { useContext } from 'react'
+import { AuthContext } from '../utils/Context'
+
+
 const main = () => {
+ const {modal} = useContext(AuthContext)
   return (
     <main className="mt-14">
       <div className="flex justify-center text-xl font-bold py-4 px-2">
@@ -24,6 +30,7 @@ const main = () => {
       <Slider />
       <Cards />
       <FooterCarousel />
+      {modal && <Modal/>}
     </main>
   )
 }

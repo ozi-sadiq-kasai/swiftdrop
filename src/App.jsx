@@ -1,22 +1,39 @@
 import Navbar from './component/Navbar'
 import Orders from './page/Orders'
+<<<<<<< HEAD
 import Home from './page/Home'
+=======
+import Home from './page/home'
+import AuthProvider from './utils/Context'
+>>>>>>> orders
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import OrderItems from './page/OrderItems'
+import Modal from './component/Modal'
+import Login from './component/Login'
+import Payment from './page/Payment'
+// import PrivateRoutes from './component/PrivateRoutes'
 
 function App() {
   return (
     <Router>
-      {/* <AuthProvider> */}
-        <Navbar />
+      <AuthProvider>
+     <Navbar/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/OrderPlaces/:id" element={<OrderItems />} />
           <Route path="/orders" element={<Orders />} />
+          <Route path="/signup" element={<Modal />} />
+          <Route path="/login" element={<Login />} />
+          {/* <Route element={<PrivateRoutes/>}> */}
+            <Route path="/payment" element={<Payment />} />
+          {/* </Route> */}
         </Routes>
-      {/* </AuthProvider> */}
+      </AuthProvider>
     </Router>
   )
 }
 
 export default App
+
+
+

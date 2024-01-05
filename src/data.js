@@ -47,63 +47,73 @@ export const icons =[
 
 ]
 
-export const republic =[
+export const foodItems =[
  {
    id:'cr2',
+   sid:1,
   image:chicken,
   name:'Coated Chicken',
   price:6000
  },
  {
    id:'cr2',
+    sid:2,
   image:chips,
   name:'Chips',
   price:5000
  },
  {
    id:'cr2',
+   sid:3,
   image:salad,
   name:'salad',
   price:2000
  },
  {
    id:'cb1',
+   sid:4,
   image:shawarma,
   name:'Shawarma',
   price:6000
  },
   {
    id:'cb1',
+    sid:5,
   image:spaghetti,
   name:'Spaghetti',
   price:6000
  },
   {
    id:'b1',
+    sid:6,
   image:rice,
   name:'Rice',
   price:6000
  },
  {
-   id:'cb1',
+  id:'cb1',
+  sid:7,
   image:burger,
   name:'Burger',
   price:2300
  },
  {
   id:'cb1',
+  sid:8,
   image:pizza,
   name:'Pizza',
   price:10000
  },
  {
    id:'ib3',
+   sid:9,
   image:amala,
   name:'Amala',
   price:2000
  },
   {
    id:'ib3',
+   sid:10,
   image:poundo,
   name:'Poundo',
   price:2000
@@ -111,12 +121,18 @@ export const republic =[
 ]
 
 
-export const eatry =[
+export const restaurantblock =[
  {
   id:'cb1',
   name:'CBAE',
   image:cbae,
   specialty:'culinary dishes'
+ },
+  {
+  id:'ib3',
+  name:'IYA BASIRA',
+  image:iyabasira,
+  specialty:'African Dishes'
  },
  {
   id:'cr2',
@@ -124,10 +140,5 @@ export const eatry =[
   image:chickenRepublic,
   specialty:'snacks, continental dishes'
  },
- {
-  id:'ib3',
-  name:'Iya Basira',
-  image:iyabasira,
-  specialty:'African Dishes'
- },
+
 ]

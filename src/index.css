@@ -116,3 +116,64 @@ body {
   to{transform: translateX(1300px);}
 }
 
+/* Signup */
+
+.modalBackground {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(77, 77, 77, 0.431);
+  position: fixed;
+  top:0;
+  left:0;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+
+.modalContainer {
+  width: 75%;
+  height:55%;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.modalForm > input{
+ border:none;
+ border-radius: 5px;
+ outline:none;
+ margin-bottom: 7px;
+ background-color: whitesmoke;
+ width: 50%;
+ padding: 5px 0;
+}
+.modalForm {
+ display: flex;
+ flex-direction: column;
+ flex-wrap: wrap;
+ justify-content: center;
+ align-items: center;
+}
+.modalContainer--header{
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ padding-bottom: 3px;
+ color:#EFC441;
+ font-weight:700;
+}
+
+.modalContainer--btn{
+ margin-top: 20px;
+ margin-bottom: 20px;
+ width: 100%;
+ padding: 6px 0;
+ border-radius:6px;
+ color: white;
+ border: none;
+ font-size: 16px;
+ background-color:rgb(21, 128, 21);
+}

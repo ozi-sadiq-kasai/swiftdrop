@@ -8,11 +8,9 @@ const Orders = () => {
 
  const handleSearch =(e)=>{
   setSearch(e.target.value)
-  // console.log(search)
  }
  const handleSubmit = (e)=>{
   e.preventDefault()
-  // console.log(search)
   setSearch('')
  }
 
