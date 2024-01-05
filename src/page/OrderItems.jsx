@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import React from 'react'
-=======
 import {useContext} from 'react'
 import 'animate.css'
->>>>>>> orders
 import { useParams } from 'react-router-dom'
 import {CartContext}from '../utils/CartContext'
 import { ProductContext } from '../utils/ProductContext'
