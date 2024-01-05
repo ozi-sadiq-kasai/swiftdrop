@@ -1,11 +1,7 @@
 import Navbar from './component/Navbar'
 import Orders from './page/Orders'
-<<<<<<< HEAD
-import Home from './page/Home'
-=======
 import Home from './page/home'
 import AuthProvider from './utils/Context'
->>>>>>> orders
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import OrderItems from './page/OrderItems'
 import Modal from './component/Modal'
