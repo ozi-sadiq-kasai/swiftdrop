@@ -15,37 +15,31 @@ const Modal = () => {
 
   return (
     <div className="modalBackground">
+      <p 
+      onClick={() => setModal(false)}
+      className='cursor-pointer text-red-900 font-extrabold'
+      >
+       Close
+      </p>
       <div className="modalContainer">
-        <div className="modalContainer--header">
-          <h1>Sign Up</h1>
-          <p onClick={() => setModal(false)}>X</p>
-        </div>
-
-        <form onSubmit={(e) => handleSignupLogin(e, credentials)}>
-          <div className="form-field-wrapper">
-            <label>Name:</label>
+          <h1 className="modalContainer--header">Sign Up</h1>
+        <form 
+        className="modalForm"
+        onSubmit={(e) => handleSignupLogin(e, credentials)}>
             <input
               value={credentials.name}
               onChange={handleInputChange}
               type="text"
               name="name"
-              placeholder="Enter name..."
+              placeholder='Name'
             />
-          </div>
-
-          <div className="form-field-wrapper">
-            <label>Email:</label>
             <input
               value={credentials.email}
               onChange={handleInputChange}
               type="email"
               name="email"
-              placeholder="Enter Email..."
+              placeholder='Email...'
             />
-          </div>
-
-          <div className="form-field-wrapper">
-            <label>Password:</label>
             <input
               value={credentials.password}
               onChange={handleInputChange}
@@ -53,15 +47,14 @@ const Modal = () => {
               name="password"
               placeholder="Enter Password..."
             />
-          </div>
 
-          <button type="submit" className="signup--btn">
+          <button type="submit" className="signup--btn bg-green-700 py-1 px-6 rounded-md">
             Submit
           </button>
         </form>
 
-        <p>
-          Already have an account? <Link to="/login">Login</Link>
+        <p className='text-xs text-center py-3'>
+          Already have an account? <Link to="/login" className='text-yellow-500'>Login</Link>
         </p>
       </div>
     </div>

@@ -14,38 +14,39 @@ const Login = () => {
 
 
   return (
-    <div className="">
-      <div className="login-register-container">
-        <form onSubmit={(e) => handleUserLogin(e, credentials)}>
-          <div className="mt-64">
-            <label>Email:</label>
-            <input
-              value={credentials.email}
-              onChange={handleInputChange}
-              name="email"
-              placeholder="Enter email"
-            />
-          </div>
-
-          <div className="form-field-wrapper">
-            <label>Password:</label>
-            <input
-              type="password"
-              value={credentials.password}
-              onChange={handleInputChange}
-              name="password"
-              placeholder="Enter password"
-              className="login--password"
-            />
-          </div>
-
-          <button type="submit" className="login--btn">
+    <div className="modalBackground">
+      <div className="modalContainer">
+        <p className="modalContainer--header">Sigin In</p>
+        <form
+          className="modalForm"
+          onSubmit={(e) => handleUserLogin(e, credentials)}
+        >
+          <input
+            value={credentials.email}
+            onChange={handleInputChange}
+            name="email"
+            placeholder="Enter email"
+          />
+          <input
+            type="password"
+            value={credentials.password}
+            onChange={handleInputChange}
+            name="password"
+            placeholder="Enter password"
+            className="login--password"
+          />
+          <button
+            type="submit"
+            className="signup--btn bg-green-700 py-1 px-6 rounded-md"
+          >
             Submit
           </button>
         </form>
-
-        <p>
-          Don't have an account? <Link to="/signup">Signup</Link>
+        <p className="text-xs text-center py-3">
+          Don't have an account?{' '}
+          <Link to="/signup" className="text-yellow-500">
+            Signup
+          </Link>
         </p>
       </div>
     </div>

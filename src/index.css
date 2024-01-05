@@ -116,7 +116,7 @@ body {
   to{transform: translateX(1300px);}
 }
 
-/* Modal */
+/* Signup */
 
 .modalBackground {
   width: 100vw;
@@ -124,32 +124,31 @@ body {
   background-color: rgba(77, 77, 77, 0.431);
   position: fixed;
   top:0;
-  left: 0;
+  left:0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content:center;
   align-items: center;
 }
 
 .modalContainer {
-  width: 80%;
-  height: 60%;
+  width: 75%;
+  height:55%;
   border-radius: 12px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding:30px 10px;
 }
 .modalForm > input{
  border:none;
- text-align: center;
+ border-radius: 5px;
  outline:none;
- margin-bottom: 40px;
+ margin-bottom: 7px;
  background-color: whitesmoke;
- margin-right: 15px;
- width: 80%;
- padding: 4px 0;
+ width: 50%;
+ padding: 5px 0;
 }
 .modalForm {
  display: flex;
@@ -159,12 +158,12 @@ body {
  align-items: center;
 }
 .modalContainer--header{
-margin-top: 20px;
-padding-bottom: 10px;
  display: flex;
  align-items: center;
- justify-content: space-between;
- color: gray;
+ justify-content: space-around;
+ padding-bottom: 3px;
+ color:#EFC441;
+ font-weight:700;
 }
 
 .modalContainer--btn{
