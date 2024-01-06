@@ -19,7 +19,7 @@ import salad from './assets/images/salad.jpg'
 import poundo from './assets/images/poundo.jpg'
 import marketsquare from './assets/images/marketsquare.jpg'
 import tissue from './assets/images/tissue.png'
-import Peak from './assets/images/peak.png'
+import Peak from './assets/images/Peak.png'
 import omo from './assets/images/omo.png'
 import indomie from './assets/images/indomie.png'
 
