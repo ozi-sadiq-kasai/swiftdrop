@@ -17,30 +17,41 @@ import spaghetti from './assets/images/spaghetti.jpg'
 import burger from './assets/images/burger.jpg'
 import salad from './assets/images/salad.jpg'
 import poundo from './assets/images/poundo.jpg'
+import marketsquare from './assets/images/marketsquare.jpg'
+import tissue from './assets/images/tissue.png'
+import Peak from './assets/images/peak.png'
+import omo from './assets/images/omo.png'
+import indomie from './assets/images/indomie.png'
 
 export const icons =[ 
 
  {
+  iid :'rid',
   name:'restaurant',
   icon:restaurant
  },
   {
+   iid: 'sid',
   name:'supermarket',
   icon:supermarket
  },
   {
+   iid: 'pid',
   name:'pharmacy',
   icon:pharmacy
  },
   {
+    iid: 'did',
   name:'drinks',
   icon: drinks
  },
  {
+   iid: 'fid',
   name:'fitfam',
   icon: fitfam
  },
  {
+   iid: 'mid',
   name:'meal',
   icon:meal
  }
@@ -118,27 +129,66 @@ export const foodItems =[
   name:'Poundo',
   price:2000
  },
+  {
+   id:'ms',
+   sid:11,
+  image:tissue,
+  name:'tissue',
+  price:1200
+ },
+{
+ id:'ms',
+ sid:12,
+ image:indomie,
+ name:'Indomie',
+ price:150
+ }, 
+{
+ id:'ms',
+ sid:13,
+ image:omo,
+ name:'Omo',
+ price:1500
+ }, 
+{
+ id:'ms',
+ sid:14,
+ image:Peak,
+ name:'Peak',
+ price:1500
+ }, 
 ]
 
 
-export const restaurantblock =[
+export const places =[
  {
   id:'cb1',
+  iid:'rid',
   name:'CBAE',
   image:cbae,
   specialty:'culinary dishes'
  },
   {
   id:'ib3',
+  iid:'rid',
   name:'IYA BASIRA',
   image:iyabasira,
   specialty:'African Dishes'
  },
  {
   id:'cr2',
+  iid:'rid',
   name:'CHICKEN REPUBLIC',
   image:chickenRepublic,
   specialty:'snacks, continental dishes'
+ },
+
+  {
+  id:'ms',
+  iid:'sid',
+  name:'MARKET SQUARE',
+  image:marketsquare,
+  specialty:'EVERYTING UNDER ONE ROOF'
  },
 
 ]

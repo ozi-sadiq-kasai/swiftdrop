@@ -13,18 +13,15 @@ const OrderItems = () => {
   const selectedItems = products.filter((product) => product.id === id)
 
   return (
-    <>
+    <div className="relative top-12">
       <img
-        className="w-36 m-auto animate__animated animate__rollIn relative top-11"
+        className="w-36 m-auto animate__animated animate__flipInX"
         src={orderNow}
         alt="logo"
       />
       <div className="py-5 flex xsm:flex-col justify-center items-center flex-wrap gap-4">
         {selectedItems.map((product) => (
-          <div
-            key={product.sid}
-            className="mb-6 border lg:w-[30%]"
-          >
+          <div key={product.sid} className="mb-6 lg:w-[30%]">
             <img src={product.image} alt={product.name} className="w-full" />
             <p className="text-lg">{product.name}</p>
             <p className="text-sm">&#8358; {product.price}</p>
@@ -37,7 +34,7 @@ const OrderItems = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   )
 }
 

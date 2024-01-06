@@ -35,7 +35,6 @@ const Navbar = () => {
             onClick={() => navigate('/payment')}
           />
           <span className="relative bottom-2 right-8 text-xl font-bold text-yellow-400">
-            {' '}
             {quantity}
           </span>
         </div>
