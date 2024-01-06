@@ -31,10 +31,10 @@ const Navbar = () => {
           </Link>
 
           <FiShoppingCart
-            className="text-green-700 text-[32px]"
+            className="text-green-700 text-[36px]"
             onClick={() => navigate('/payment')}
           />
-          <span className="relative bottom-2 right-8 text-xl font-bold text-yellow-400  bg-green-900 rounded-3xl">
+          <span className="relative bottom-2 right-8 text-md font-bold text-yellow-400  bg-green-900 rounded-3xl">
             {quantity}
           </span>
         </div>

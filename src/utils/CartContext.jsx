@@ -10,7 +10,7 @@ const CartProvider = ({ children }) => {
   // ADD TO CART
   const addToCart = (product, sid) => {
     const newItem = { ...product, amount: 1 }
-console.log(newItem)
+// console.log(newItem)
     // Determine if the item is already in the cart
     const cartItem = cart.find((item) => item.sid === sid)
 
@@ -27,7 +27,7 @@ console.log(newItem)
 
   }
 useEffect(() => {
-  console.log(cart)
+  // console.log(cart)
 }, [cart])
 
   // REMOVE FROM CART

@@ -1,17 +1,17 @@
-import { useContext, useEffect } from 'react'
+import { useContext} from 'react'
 import { AuthContext } from '../utils/Context'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Modal = () => {
   const { setModal, credentials, handleInputChange, handleSignupLogin, user } =
     useContext(AuthContext)
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
-  useEffect(() => {
-    if (user) {
-      navigate('/payment')
-    }
-  }, [user, navigate])
+  // useEffect(() => {
+  //   if (user) {
+  //     navigate('/orders')
+  //   }
+  // }, [user, navigate])
 
   return (
     <div className="modalBackground">
@@ -22,7 +22,10 @@ const Modal = () => {
        Close
       </p>
       <div className="modalContainer">
+        <div >
           <h1 className="modalContainer--header">Sign Up</h1>
+        </div>
+
         <form 
         className="modalForm"
         onSubmit={(e) => handleSignupLogin(e, credentials)}>

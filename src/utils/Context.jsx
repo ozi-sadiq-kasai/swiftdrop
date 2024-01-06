@@ -17,7 +17,7 @@ const AuthProvider = ({ children }) => {
   // handle close modal
   const handleCloseModal = () => {
     setModal(false)
-    console.log(modal)
+    
   }
 
   //handle inputChange
@@ -26,7 +26,7 @@ const AuthProvider = ({ children }) => {
     let name = e.target.name
     let value = e.target.value
     setCredentials({ ...credentials, [name]: value })
-    console.log(credentials)
+    // console.log(credentials)
   }
 
   //handle Userlogin
@@ -37,10 +37,14 @@ const AuthProvider = ({ children }) => {
         credentials.email,
         credentials.password
       )
-      console.log('logged', response)
+      // console.log('logged', response)
       const accountDetails = account.get()
       setUser(accountDetails)
-      navigate('/payment')
+       setCredentials({
+         email: '',
+         password: '',
+       })
+      navigate('/orders')
     } catch (error) {
       console.error(error)
     }
@@ -66,6 +70,7 @@ const AuthProvider = ({ children }) => {
         email: '',
         password: '',
       })
+      navigate('/orders')
     } catch (error) {
       console.error(error)
     }

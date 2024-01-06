@@ -1,16 +1,16 @@
-import {useContext,useEffect} from 'react'
+import {useContext} from 'react'
 import { AuthContext } from '../utils/Context'
-import { Link,useNavigate} from 'react-router-dom'
+import { Link} from 'react-router-dom'
 
 const Login = () => {
  const { handleInputChange, credentials, handleUserLogin, user} =
    useContext(AuthContext)
-   const navigate = useNavigate()
-   useEffect(() => {
-     if (user) {
-       navigate('/payment')
-     }
-   }, [user, navigate])
+   // const navigate = useNavigate()
+   // useEffect(() => {
+   //   if (user) {
+   //     navigate('/home')
+   //   }
+   // }, [user, navigate])
 
 
   return (
@@ -43,7 +43,7 @@ const Login = () => {
           </button>
         </form>
         <p className="text-xs text-center py-3">
-          Don't have an account?{' '}
+          Don't have an account?
           <Link to="/signup" className="text-yellow-500">
             Signup
           </Link>
