@@ -6,7 +6,7 @@ import { AuthContext } from '../utils/Context'
 
 const OrderTypes = () => {
   const { modal } = useContext(AuthContext)
-  const [selectedIid, setSelectedIid] = useState(null)
+  const [selectedIid, setSelectedIid] = useState('rid')
 
   const handleIconClick = (iid) => {
     setSelectedIid(iid)

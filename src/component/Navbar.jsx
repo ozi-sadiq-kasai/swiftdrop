@@ -34,7 +34,7 @@ const Navbar = () => {
             className="text-green-700 text-[32px]"
             onClick={() => navigate('/payment')}
           />
-          <span className="relative bottom-2 right-8 text-xl font-bold text-yellow-400">
+          <span className="relative bottom-2 right-8 text-xl font-bold text-yellow-400  bg-green-900 rounded-3xl">
             {quantity}
           </span>
         </div>
