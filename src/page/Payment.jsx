@@ -3,6 +3,7 @@ import {CartContext} from '../utils/CartContext'
 import { HiMiniMinusSmall } from 'react-icons/hi2'
 import { HiMiniPlusSmall } from 'react-icons/hi2'
 import { IoMdClose } from 'react-icons/io'
+import { FaRegTrashCan } from 'react-icons/fa6'
 
 const Payment = () => {
  const { cart, addQuantity, removeQuantity, removeCart, totalAmount,clearCart } =
@@ -50,17 +51,15 @@ const Payment = () => {
     <div className="mt-11 mx-10">
       <div className="border-b py-1 flex justify-between">
         <p>Checkout</p>
-        <div className='flex'>
+        <div className="flex">
           <p className="text-green-400 font-bold"> Total Amount: </p>
           <span>&#8358;{totalAmount}</span>
         </div>
       </div>
       {purchaseItems}
-      <div>
-       <p
-       onClick={clearCart}
-       >
-        Clear Cart </p>
+      <div className="flex items-center">
+        <p className="text-xs">Clear Cart </p>
+        <FaRegTrashCan onClick={clearCart} className="text-red-400 cursor-pointer" />
       </div>
     </div>
   )
