@@ -5,7 +5,7 @@ import { HiMiniPlusSmall } from 'react-icons/hi2'
 import { IoMdClose } from 'react-icons/io'
 
 const Payment = () => {
- const { cart, addQuantity, removeQuantity, removeCart, totalAmount } =
+ const { cart, addQuantity, removeQuantity, removeCart, totalAmount,clearCart } =
    useContext(CartContext)
 
  const purchaseItems = cart.map((item) => (
@@ -56,6 +56,12 @@ const Payment = () => {
         </div>
       </div>
       {purchaseItems}
+      <div>
+       <p
+       onClick={clearCart}
+       >
+        Clear Cart </p>
+      </div>
     </div>
   )
 }
