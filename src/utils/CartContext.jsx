@@ -80,6 +80,12 @@ useEffect(() => {
     setCart(updatedCart)
   }
 
+  // DELIVERY FEE
+  const delivery =(totalAmount,deliveryPercentage)=>{
+   const deliveryFee = (deliveryPercentage / 100) * totalAmount
+   return deliveryFee
+  }
+
   // CLEAR CART
   const clearCart = () => {
     setCart([])
@@ -95,6 +101,7 @@ useEffect(() => {
         totalAmount,
         addQuantity,
         removeQuantity,
+        delivery,
         clearCart,
       }}
     >

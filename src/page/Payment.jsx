@@ -6,8 +6,10 @@ import { IoMdClose } from 'react-icons/io'
 import { FaRegTrashCan } from 'react-icons/fa6'
 
 const Payment = () => {
- const { cart, addQuantity, removeQuantity, removeCart, totalAmount,clearCart } =
+ const { cart, addQuantity, removeQuantity, removeCart, totalAmount,clearCart,delivery } =
    useContext(CartContext)
+const deliveryFee = delivery(totalAmount,5)
+const grandTotal = totalAmount + deliveryFee
 
  const purchaseItems = cart.map((item) => (
    <div className="m-4 border-b relative px-2" key={`${item.sid}-${item.name}`}>
@@ -46,20 +48,23 @@ const Payment = () => {
      </div>
    </div>
  ))
- console.log(purchaseItems)
   return (
     <div className="mt-11 mx-10">
-      <div className="border-b py-1 flex justify-between">
-        <p>Checkout</p>
-        <div className="flex">
-          <p className="text-green-400 font-bold"> Total Amount: </p>
-          <span>&#8358;{totalAmount}</span>
-        </div>
-      </div>
       {purchaseItems}
+      <p>Checkout</p>
+      <div className="flex flex-col">
+        <p className="font-bold">
+          Total Ordered Items: &#8358;{totalAmount}
+        </p>
+        <p>Delivery fee:{deliveryFee}</p>
+        <p>GrandTotal:{grandTotal}</p>
+      </div>
       <div className="flex items-center">
         <p className="text-xs">Clear Cart </p>
-        <FaRegTrashCan onClick={clearCart} className="text-red-400 cursor-pointer" />
+        <FaRegTrashCan
+          onClick={clearCart}
+          className="text-red-400 cursor-pointer"
+        />
       </div>
     </div>
   )
